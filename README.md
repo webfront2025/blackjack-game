@@ -30,7 +30,7 @@ Spillets logik er adskilt fra brugergrænsefladen for at sikre en ren arkitektur
 ## Projektstruktur
 
 src/
-- app/   => UI og sider
+- app/    => UI og sider
 - komponenter/  =>  UI komponenter
 - lib/    => Spillogik
 - tests   => Enhedstests
@@ -51,6 +51,7 @@ http://localhost:3000
 ## Kør tests
 
 npm test
+npm run test:coverage
 
 ## Arkitektur
 
