@@ -58,11 +58,11 @@ npm run test:coverage
 Spillogik er opdelt i:
 src/lib/blackjack.js
 
-UI håndterer kun tilstand og rendering.
+UI håndterer kun tilstand og rendering , mens al spil-logik ligger i src/lib.
 
 Dette følger:
 - Princippet om enkeltansvar
-- Adskillelse af bekymringer
+- Separation of Concerns
 
 ## Forfatter
 Mansoureh Safarian Toosi

@@ -1,4 +1,5 @@
 export const suits = ["\u2660", "\u2665", "\u2666", "\u2663"];
+//                  spade: "\u2660", heart: "\u2665",Diamond: "\u2666",Club: "\u2663"
 export const values = [
   "A", "2", "3", "4", "5", "6",
   "7", "8", "9", "10", "J", "Q", "K"
@@ -16,7 +17,8 @@ export function createDeck() {
   return deck;
 }
 
-// Shuffle deck
+// Shuffle deck   
+//             ***** Shuffle betyder at korten blandes tilfældigt./ the cards are shuffled randomly.
 export function shuffle(deck) {
   return deck.sort(() => Math.random() - 0.5);
 }
@@ -43,10 +45,12 @@ export function handValue(hand) {
 export function determineWinner(playerHand, dealerHand) {
   const playerScore = handValue(playerHand);
   const dealerScore = handValue(dealerHand);
-
+// Bust**** betyder at man går over 21 og taber. / lose
   if (playerScore > 21) return "dealer";
   if (dealerScore > 21) return "player";
   if (playerScore > dealerScore) return "player";
   if (dealerScore > playerScore) return "dealer";
+    // Push betyder uafgjort. / a draw  
+    // If   playerScore === dealerScore  => none of them busted then "Push"
   return "push";
 }
