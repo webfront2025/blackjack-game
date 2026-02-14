@@ -1,0 +1,75 @@
+@startuml
+title Blackjack Game - UML Class Diagram
+
+class Card {
+  - suit: string
+  - value: string
+}
+
+class Deck {
+  - cards: Card[]
+  + createDeck()
+  + shuffle()
+  + deal(): Card
+}
+
+class Player {
+  - hand: Card[]
+  + hit(deck: Deck)
+  + handValue(): number
+}
+
+class Dealer {
+  - hand: Card[]
+  + play(deck: Deck)
+  + handValue(): number
+}
+
+class Game {
+  - deck: Deck
+  - player: Player
+  - dealer: Dealer
+  - status: string
+  - gameOver: boolean
+  + deal()
+  + hit()
+  + stand()
+  + restart()
+  + determineWinner(): string
+}
+
+class Home {
+  - deck: Card[]
+  - player: Card[]
+  - dealer: Card[]
+  - status: string
+  - gameOver: boolean
+  + deal()
+  + hit()
+  + stand()
+  + restart()
+}
+
+class Section {
+  - title: string
+  - hand: Card[]
+}
+
+class Button {
+  - children
+  - onClick
+}
+
+Deck "1" *-- "52" Card
+Player "1" *-- "*" Card
+Dealer "1" *-- "*" Card
+
+Game --> Deck
+Game --> Player
+Game --> Dealer
+
+Home --> Game
+Home --> Section
+Home --> Button
+
+@enduml
