@@ -64,6 +64,20 @@ Dette følger:
 - Princippet om enkeltansvar
 - Separation of Concerns
 
+## Running with Docker
+
+Build image:
+
+    docker build -t blackjack-game .
+
+Run container:
+
+    docker run -p 3000:3000 blackjack-game
+
+Open browser:
+http://localhost:3000
+
+
 ## Forfatter
 Mansoureh Safarian Toosi
 
